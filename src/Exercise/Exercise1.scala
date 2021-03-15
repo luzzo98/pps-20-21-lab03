@@ -8,8 +8,7 @@ object Exercise1 {
 
   @tailrec
   def drop[A](l: List[A], n: Int): List[A] = l match {
-    case Cons(_, t) if n>0 => drop(t,n-1)
-    case Cons(_, _) if n==0 => l
+    case Cons(_, t) => if (n>0) drop(t,n-1) else l
     case Nil() => Nil()
   }
 
@@ -18,9 +17,9 @@ object Exercise1 {
     case Nil() =>Nil()
   }
 
-  def map2[A,B](l: List[A])(mapper: A=>B): List[B] = flatMap(l)(v => Cons(mapper(v), Nil()))
+  def myMap[A,B](l: List[A])(mapper: A=>B): List[B] = flatMap(l)(v => Cons(mapper(v), Nil()))
 
-  def filter2[A](l: List[A])(pred: A=>Boolean): List[A] = flatMap(l) {
+  def myFilter[A](l: List[A])(pred: A=>Boolean): List[A] = flatMap(l) {
     case v if pred(v) => Cons(v, Nil())
     case _ => Nil()
   }
