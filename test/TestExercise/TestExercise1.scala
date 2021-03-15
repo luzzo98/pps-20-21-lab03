@@ -21,12 +21,12 @@ class TestExercise1 {
   }
 
   @Test def testMap2(): Unit = {
-    assertEquals(Cons(20, Cons(30, Nil())), drop(lst, 1))
-    assertEquals(Cons(30, Nil()), drop(lst, 2))
-    assertEquals(Nil(), drop(lst, 5))
+    assertEquals(Cons(12, Cons(22, Cons(32, Nil()))), map2(lst)(_+2))
+    assertEquals(Cons(20, Cons(40, Cons(60, Nil()))), map2(lst)(_*2))
   }
 
   @Test def testFilter2(): Unit = {
-    assertEquals()
+    assertEquals(Cons(20, Cons(30, Nil())), filter[Int](lst)(_ >= 20))
+    assertEquals(Cons(10, Nil()), filter[Int](lst)(_ < 20))
   }
 }

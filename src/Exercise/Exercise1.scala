@@ -18,6 +18,10 @@ object Exercise1 {
     case Nil() =>Nil()
   }
 
+  def map2[A,B](l: List[A])(mapper: A=>B): List[B] = flatMap(l)(v => Cons(mapper(v), Nil()))
 
-
+  def filter2[A](l: List[A])(pred: A=>Boolean): List[A] = flatMap(l) {
+    case v if pred(v) => Cons(v, Nil())
+    case _ => Nil()
+  }
 }
