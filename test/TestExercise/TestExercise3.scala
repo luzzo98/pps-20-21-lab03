@@ -13,7 +13,7 @@ class TestExercise3 {
 
   @Test def testCoursesOfTeachers(): Unit = {
     assertEquals(Cons("Fisica", Cons("Analisi", Nil())), coursesOfTeachers(l))
-    assertEquals(Nil(), coursesOfTeachers(Cons(Student("Alex", 2015), Nil())))
-    assertEquals(Nil(), coursesOfTeachers(Nil()))
+    assertEquals(Nil(), coursesOfTeachers(Cons(Student("Alex", 2015), Nil()))) //test with no Teacher()
+    assertEquals(Nil(), coursesOfTeachers(Nil())) //test with Nil()
   }
 }
