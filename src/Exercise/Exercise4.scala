@@ -26,9 +26,7 @@ object Exercise4 {
 //  }
 
   //optimized version of "foldRight()"
-  def foldRight[A,B](list: List[A])(initialValue: B)(f: (A,B) => B): B = {
-    foldLeft(reverse(list))(initialValue)((a,b) => f(b,a))
-  }
+  def foldRight[A,B](list: List[A])(initialValue: B)(f: (A,B) => B): B = foldLeft(reverse(list))(initialValue)((a,b) => f(b,a))
 
   def reverse[A](list: List[A]): List[A] = list match {
     case Cons(h, t) => t match {
