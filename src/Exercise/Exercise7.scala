@@ -2,7 +2,6 @@ package Exercise
 
 import u03.Streams.Stream
 import u03.Streams.Stream._
-import scala.annotation.tailrec
 
 object Exercise7 {
 
