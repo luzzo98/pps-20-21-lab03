@@ -19,7 +19,7 @@ object Exercise5 {
     }
 
 
-    
+
     //the original code of Streams.scala
     private case class Empty[A]() extends Stream[A]
     private case class Cons[A](head: () => A, tail: () => Stream[A]) extends Stream[A]

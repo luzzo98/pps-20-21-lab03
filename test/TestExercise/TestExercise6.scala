@@ -10,7 +10,8 @@ class TestExercise6 {
 
   @Test def testConstant() {
     assertEquals(Cons("x", Cons("x", Cons("x", Cons("x", Cons("x", Nil()))))), Stream.toList(Stream.take(constant("x"))(5)))
-    assertEquals(Nil(), Stream.toList(Stream.take(constant("x"))(0)))
     assertEquals(Cons(2, Cons(2, Cons(2, Nil()))), Stream.toList(Stream.take(constant(2))(3)))
+    assertEquals(Cons(true, Cons(true, Nil())), Stream.toList(Stream.take(constant(true))(2)))
+    assertEquals(Nil(), Stream.toList(Stream.take(constant("x"))(0)))
   }
 }
