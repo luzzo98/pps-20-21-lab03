@@ -12,6 +12,7 @@ class TestExercise7 {
 
   @Test def testFibs(): Unit = {
     assertEquals(fibsOf8, Stream.toList(Stream.take(fibs())(8)))
+    assertEquals(Cons(0, Cons(1, Nil())), Stream.toList(Stream.take(fibs())(2)))
     assertEquals(Cons(0, Nil()), Stream.toList(Stream.take(fibs())(1)))
     assertEquals(Nil(), Stream.toList(Stream.take(fibs())(0)))
   }
