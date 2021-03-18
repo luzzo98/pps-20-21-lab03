@@ -13,8 +13,7 @@ object Exercise5 {
     //Exercise 5
     @tailrec
     def drop[A](stream: Stream[A])(n: Int): Stream[A] = (stream,n) match {
-      case (Cons(_, tail), n) if n>1 => drop(tail())(n-1)
-      case (Cons(_, tail), n) if n==1 => tail()
+      case (Cons(_, tail), n) if n>=1 => if (n>1) drop(tail())(n-1) else tail()
       case _ => stream //return the entire stream if "drop" is called with an Empty stream or with an n <=0
     }
 
